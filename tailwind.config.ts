@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -6,7 +7,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	prefix: "",
 	theme: {
@@ -61,6 +62,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				concrete: {
+					'50': '#f8f8f8',
+					'100': '#f0f0f0',
+					'200': '#e4e4e4',
+					'300': '#d1d1d1',
+					'400': '#b4b4b4',
+					'500': '#9a9a9a',
+					'600': '#818181',
+					'700': '#6a6a6a',
+					'800': '#5a5a5a',
+					'900': '#4e4e4e',
+					'950': '#282828',
+				},
+				accent1: {
+					DEFAULT: '#ffc72c',
+					dark: '#e6b000'
+				},
+				accent2: {
+					DEFAULT: '#c74634',
+					dark: '#a83828'
 				}
 			},
 			borderRadius: {
@@ -70,20 +92,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				}
 			},
 			animation: {
