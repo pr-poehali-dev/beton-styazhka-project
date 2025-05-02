@@ -1,67 +1,57 @@
 
 import React from 'react';
-import { Section } from '@/components/ui/section';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Icon from '@/components/ui/Icon';
 
-type Promotion = {
-  id: number;
-  title: string;
-  description: string;
-  icon: string;
-};
-
-const promotions: Promotion[] = [
+const promotions = [
   {
-    id: 1,
-    title: 'Скидка 10%',
-    description: 'Если не врёте про метраж. Да, мы всё равно перемеряем, но ценим честность с первого звонка 😄',
-    icon: 'Percent'
+    icon: "BadgePercent", 
+    title: "Скидка 10%",
+    description: "Если не врёте про метраж 😄 Серьёзно, мы ценим честность и точные данные. Это экономит время всем."
   },
   {
-    id: 2,
-    title: 'Бесплатный выезд',
-    description: 'Если сварите нам кофе ☕ Шутка, выезд всегда бесплатный. Но от кофе не откажемся.',
-    icon: 'Coffee'
+    icon: "Coffee",
+    title: "Бесплатный выезд",
+    description: "Если сварите нам кофе ☕ Мы всегда на ногах и кофе — наше топливо. Хороший кофе = хорошее настроение."
   },
   {
-    id: 3,
-    title: 'Второй объект дешевле',
-    description: 'Если не будете звонить каждые 15 минут. Доверьтесь профессионалам, и мы сделаем всё быстрее.',
-    icon: 'Building'
+    icon: "Building2",
+    title: "Второй объект дешевле",
+    description: "Если не будете звонить каждые 15 минут с вопросом «Как там дела?» Доверие — лучший бонус для нас."
   },
   {
-    id: 4,
-    title: 'Бонус от команды',
-    description: 'Если у вас собака на объекте, и она не кусается 🐶 Серьёзно, любим животных, которые нас любят.',
-    icon: 'Heart'
+    icon: "Dog",
+    title: "Дополнительный бонус",
+    description: "Если у вас на объекте собака, и она не кусается 🐶 Мы любим животных, особенно дружелюбных."
   }
 ];
 
 const Promotions: React.FC = () => {
   return (
-    <Section 
-      id="promotions" 
-      title="Акции и бонусы" 
-      subtitle="Мы не заманиваем низкими ценами, но любим порадовать клиентов"
-      className="py-16 bg-concrete-100"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {promotions.map((promo) => (
-          <Card key={promo.id} className="p-6 border-concrete-200 hover:border-accent1 hover:shadow-md transition">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-accent1 rounded-full text-white">
-                <Icon name={promo.icon} size={20} />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-1">{promo.title}</h3>
-                <p className="text-concrete-700">{promo.description}</p>
-              </div>
-            </div>
-          </Card>
-        ))}
+    <section id="promotions" className="py-16 bg-gradient-to-b from-concrete-100 to-white">
+      <div className="container mx-auto">
+        <h2 className="section-title text-center">Акции и бонусы <span className="text-concrete-500">(с юмором)</span></h2>
+        <p className="text-concrete-600 text-lg text-center mb-10 max-w-3xl mx-auto">
+          Мы ценим простоту и человеческий подход, поэтому наши акции — такие же.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {promotions.map((promo, index) => (
+            <Card key={index} className="bg-white border border-concrete-200 hover:shadow-md transition-all">
+              <CardHeader className="pb-2">
+                <div className="w-12 h-12 bg-accent1/10 text-accent1 rounded-full flex items-center justify-center mb-3">
+                  <Icon name={promo.icon} size={24} />
+                </div>
+                <CardTitle className="text-xl">{promo.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-concrete-600">{promo.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 };
 

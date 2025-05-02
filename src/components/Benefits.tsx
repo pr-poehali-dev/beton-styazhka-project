@@ -1,66 +1,100 @@
 
-import React from 'react';
-import { Section } from '@/components/ui/section';
-import Icon from '@/components/ui/Icon';
-
-type Benefit = {
-  id: number;
-  title: string;
-  description: string;
+import React from 'react
 };
 
-const benefits: Benefit[] = [
+export default Icon;
+</pp';
+import Icon from '@/components/-write>ui/Icon';
+
+const benefits = [
+
+<pp-write filepath="
   {
-    id: 1,
-    title: 'Работаем по всему Крыму',
-    description: 'Симферополь, Севастополь, Ялта, Евпатория — везде доберёмся. Ни одного заказа не оставили без внимания.'
+    iconsrc/pages/Index: "MapPin",
+    title.tsx">
+import: "Работа React from 'reactем по всему Крыму",';
+import Header from '@/components/
+    description: "От КерHeader';
+import Hero from '@/components/чи до СевHero';
+import Services from '@/components/Services';
+import Benefitsастополя — приедем в любую from '@/components/Benefits';
+import Process точку полуостр from '@/components/Process';
+importова без доплат за Promotions from '@/components километраж."
+  /Promotions';},
+  {
+import Testimonials from '@/components/
+    icon: "Clock",
+    title:Testimonials';
+import Faq from "Не опаздываем и '@/components/Faq';
+import Contact from '@/components не пропадаем",
+    /Contact';
+import Footer from '@/componentsdescription: "Сказ/Footer';
+
+const Index: React.FC = () => {
+  return (
+    <div className="minали в среду — знач-h-screen">
+      <Header />ит в среду. И
+      <main>
+        <Hero />
+        <Services />
+        <Benefits не через 3 недели после />
+        <Process />
+        <Promotions />
+        <Testimonials /> предоплаты, а
+        <Faq />
+        <Contact />
+       как договорились."
+  </main>
+      <Footer />
+    },
+  {
+    icon: "</div>
+  );
+};
+
+export defaultHammer",
+    title: "При Index;
+</ppезжаем со своим инструмент-write>ом",
+    description: "Не н
+
+🏗️ Создужно искать специальную технал одностраничныйику и материалы. У сайт для компании нас всё с собой и по бетонным всегда в рабочем состоянии."
+   стяжкам в},
+  {
+    icon: "File Крыму. Сайт содText",
+    title: "Гержит все необходимые разарантия по договору",
+    descriptionделы: главный: "Никаких устных об экран с призывом к действиюещаний. Офици, услуги, преимущества, этапы работ, акции, отзывы, FAQ и контактную информальный договор иацию. Д гарантия до 5 лет на все виды работ."изайн выполнен в б
   },
   {
-    id: 2,
-    title: 'Не опаздываем, не пропадаем',
-    description: 'Никаких "может приедем, а может нет". Сказали в четверг — значит будем в четверг. А не через неделю.'
-  },
-  {
-    id: 3,
-    title: 'Приезжаем со своим инструментом',
-    description: 'Не просим "одолжить перфоратор" или "найти удлинитель". У нас всё своё, профессиональное, проверенное.'
-  },
-  {
-    id: 4,
-    title: 'Гарантия по договору',
-    description: 'Даём гарантию в бумажном виде, а не на словах. Если что-то пойдёт не так — починим бесплатно.'
-  },
-  {
-    id: 5,
-    title: 'Делаем как себе',
-    description: 'Можно ходить без стяжки, но мы бы не советовали. У нас стандарт — сделать так, чтобы не стыдно было.'
+    icon: "ThumbsUp",етонной цветовой гам
+    title: "Делаем как себме с желтыми акцентамие",
+    description: "Можно, сохраняя жить без стя прямой и честжки, но мы бы не советовали.ный тон общения от лица реальных Как и экономить на кач мастеров.естве материалов."
   }
 ];
 
 const Benefits: React.FC = () => {
   return (
-    <Section 
-      id="benefits" 
-      title="Преимущества" 
-      subtitle="То, что отличает нас от тех, кто просто болтает"
-      className="py-16"
-    >
-      <div className="space-y-6">
-        {benefits.map((benefit) => (
-          <div key={benefit.id} className="flex items-start gap-4 p-4 rounded-lg hover:bg-concrete-100 transition-colors">
-            <div className="flex-shrink-0 mt-1">
-              <div className="w-8 h-8 flex items-center justify-center bg-accent1 rounded-full text-white">
-                <Icon name="Check" size={18} />
+    <section id="benefits" className="py-16">
+      <div className="container mx-auto">
+        <h2 className="section-title text-center">Чем мы отличаемся от других</h2>
+        <p className="text-concrete-600 text-lg text-center mb-10 max-w-3xl mx-auto">
+          Не прячемся за красивыми словами. Просто делаем свою работу хорошо.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="benefit-item">
+              <div className="shrink-0 bg-accent1 text-white p-3 rounded-lg">
+                <Icon name={benefit.icon} size={24} />
+              </div>
+              <div>
+                <h3 className="font-bold text-xl mb-1">{benefit.title}</h3>
+                <p className="text-concrete-600">{benefit.description}</p>
               </div>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-1">{benefit.title}</h3>
-              <p className="text-concrete-700">{benefit.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 };
 
